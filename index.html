@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131f">
+  <title>Berry Gacha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">฿</span><div><strong>BERRY GACHA</strong><small>Le pouvoir est dans le tirage</small></div></div>
+      <div class="wallet"><span>💰</span><div><small>TON TRÉSOR</small><strong id="balance">1 000 ฿</strong></div><button id="addBerry" class="icon-button" title="Ajouter 500 Berrys" aria-label="Ajouter 500 Berrys">＋</button></div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">⚓ GRAND LINE • COMPTOIR DES AMÉLIORATIONS</p>
+        <h1>Réveille le pouvoir<br><em>de ta baguette.</em></h1>
+        <p class="intro">Tente ta chance et découvre des améliorations rares. Chaque tirage peut changer ton aventure.</p>
+        <div class="hero-tags"><span>✦ 5 niveaux de rareté</span><span>✦ Tirages aléatoires</span><span>✦ Collection personnelle</span></div>
+      </div>
+      <div class="treasure" aria-hidden="true"><div class="glow"></div><div class="chest">🧰</div><div class="spark s1">✦</div><div class="spark s2">✧</div><div class="spark s3">✦</div><div class="coin">฿</div></div>
+    </section>
+
+    <section class="gacha-panel">
+      <div class="section-heading"><div><p class="eyebrow">LE COMPTOIR</p><h2>Invocation</h2></div><span class="pill">Tirage standard</span></div>
+      <div class="banner">
+        <div><span class="banner-kicker">BANNIÈRE PERMANENTE</span><h3>Trésors de la mer</h3><p>Des améliorations pour tous les styles de baguettes.</p></div>
+        <div class="banner-icon">🎁</div>
+      </div>
+      <div class="rates" id="rates"></div>
+      <div class="draw-actions">
+        <button class="draw-button" id="drawOne"><span>✦</span><strong>Invoquer ×1</strong><small>100 ฿</small></button>
+        <button class="draw-button secondary" id="drawTen"><span>✦✦</span><strong>Invoquer ×10</strong><small>900 ฿ · 10 % de réduction</small></button>
+      </div>
+      <p class="hint">Les Berrys de départ sont fictifs. Utilise ＋ pour tester l'ajout de Berrys.</p>
+    </section>
+
+    <section class="lower-grid">
+      <section class="panel">
+        <div class="section-heading"><div><p class="eyebrow">TES DÉCOUVERTES</p><h2>Inventaire <span class="count" id="inventoryCount">0</span></h2></div><button class="text-button" id="sortInventory">Trier ↕</button></div>
+        <div id="inventory" class="inventory empty">Tes améliorations apparaîtront ici après tes invocations.</div>
+      </section>
+      <section class="panel history-panel">
+        <div class="section-heading"><div><p class="eyebrow">TES DERNIERS TIRAGES</p><h2>Historique</h2></div><button class="text-button" id="clearHistory">Effacer</button></div>
+        <div id="history" class="history empty">Aucun tirage pour le moment.</div>
+      </section>
+    </section>
+    <footer><span>☠ BERRY GACHA</span><span>Prototype fan-made • Les Berrys n'ont aucune valeur réelle</span></footer>
+  </main>
+
+  <div class="modal-backdrop" id="modal" hidden>
+    <section class="result-modal" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+      <button class="close" id="closeModal" aria-label="Fermer">×</button>
+      <p class="eyebrow">LE DESTIN A PARLÉ</p><h2 id="resultTitle">Tes découvertes</h2>
+      <div id="results" class="results-grid"></div>
+      <button class="primary-button" id="claimResults">Récupérer</button>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
